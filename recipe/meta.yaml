@@ -22,12 +22,12 @@ requirements:
   run:
     - gmpy2
     - mpmath
-	  - networkx
-	  - numpy >=1.19.3
-	  - pybind11 >=2.7.0
+    - networkx
+    - numpy >=1.19.3
+    - pybind11 >=2.7.0
     - python >=3.6
-	  - scipy >=1.7.0
-	  - tensorflow >=2.0.0
+    - scipy >=1.7.0
+    - tensorflow >=2.0.0
 
 test:
   imports:
