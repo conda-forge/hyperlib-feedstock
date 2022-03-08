@@ -12,20 +12,22 @@ source:
 
 build:
   number: 0
-  noarch: python
   script: {{ PYTHON }} -m pip install . -vv
+  skip: true  # [py<37]
 
 requirements:
+  build:
+    - {{ compiler('cxx') }}
   host:
     - pip
     - pybind11 >=2.7.0
-    - python >=3.6
+    - python
   run:
     - gmpy2
     - mpmath
     - networkx
     - numpy >=1.19.3
-    - python >=3.6
+    - python
     - scipy >=1.7.0
     - tensorflow >=2.0.0
 
