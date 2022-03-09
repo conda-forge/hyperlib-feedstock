@@ -23,6 +23,8 @@ requirements:
     - pybind11 >=2.7.0
     - python
   run:
+    # Needed for tensorflow 2.4.3
+    - absl-py~=0.10
     - gmpy2
     - mpmath
     - networkx
