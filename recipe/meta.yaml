@@ -33,6 +33,8 @@ requirements:
     - python
     - scipy >=1.7.0
     - tensorflow >=2.0.0
+    # Needed for tensorflow 2.4.3
+    - wrapt ~=1.12.1
 
 test:
   imports:
