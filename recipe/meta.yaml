@@ -1,5 +1,5 @@
 {% set name = "hyperlib" %}
-{% set version = "0.0.3" %}
+{% set version = "0.0.4" %}
 
 
 package:
@@ -8,19 +8,33 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/hyperlib-{{ version }}.tar.gz
-  sha256: 249d8d6ed06c795d7ca8b56b6d166b0872172f986386edcfc4eb58fe77826a1d
+  sha256: 8adccade17bb28192b11edb733c31c5d22965144f8ed35d3071623ec53814056
 
 build:
   number: 0
-  noarch: python
   script: {{ PYTHON }} -m pip install . -vv
+  skip: true  # [py<37]
 
 requirements:
+  build:
+    - {{ compiler('cxx') }}
   host:
     - pip
-    - python >=3.6
+    - pybind11 >=2.7.0
+    - python
   run:
-    - python >=3.6
+    # Needed for tensorflow 2.4.3
+    - absl-py ~=0.10
+    - gmpy2
+    - mpmath
+    - networkx
+    - numpy >=1.19.3
+    - pybind11 >=2.7.0
+    - python
+    - scipy >=1.7.0
+    - tensorflow >=2.0.0
+    # Needed for tensorflow 2.4.3
+    - wrapt ~=1.12.1
 
 test:
   imports:
@@ -29,6 +43,7 @@ test:
     - pip check
   requires:
     - pip
+    - pybind11 >=2.7.0
 
 about:
   home: https://github.com/nalexai/hyperbolic
