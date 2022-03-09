@@ -27,6 +27,7 @@ requirements:
     - mpmath
     - networkx
     - numpy >=1.19.3
+    - pybind11 >=2.7.0
     - python
     - scipy >=1.7.0
     - tensorflow >=2.0.0
