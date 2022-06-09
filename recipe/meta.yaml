@@ -1,5 +1,5 @@
 {% set name = "hyperlib" %}
-{% set version = "0.0.4" %}
+{% set version = "0.0.6" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/hyperlib-{{ version }}.tar.gz
-  sha256: 8adccade17bb28192b11edb733c31c5d22965144f8ed35d3071623ec53814056
+  sha256: 6b9dc939287bbd6a0a18ceb0a1f3763acf26f3bbfd147ea488dc2db250ad8a5e
 
 build:
   number: 0
