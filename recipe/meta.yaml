@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/hyperlib-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/hyperlib-{{ version }}.tar.gz
   sha256: 6b9dc939287bbd6a0a18ceb0a1f3763acf26f3bbfd147ea488dc2db250ad8a5e
 
 build:
-  number: 1
+  number: 2
   script: {{ PYTHON }} -m pip install . -vv
   skip: true  # [py<37 or win]
 
@@ -23,6 +23,7 @@ requirements:
     - pip
     - pybind11 >=2.7.0
     - python
+    - setuptools
   run:
     - gmpy2
     - mpmath
